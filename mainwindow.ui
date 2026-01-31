@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>WeatherApp</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="WeatherLabel">
@@ -20,7 +20,7 @@
       <x>10</x>
       <y>50</y>
       <width>531</width>
-      <height>51</height>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">

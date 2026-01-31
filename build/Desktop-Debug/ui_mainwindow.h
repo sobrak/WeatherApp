@@ -41,7 +41,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         WeatherLabel = new QLabel(centralwidget);
         WeatherLabel->setObjectName("WeatherLabel");
-        WeatherLabel->setGeometry(QRect(10, 50, 531, 51));
+        WeatherLabel->setGeometry(QRect(10, 50, 531, 71));
         QFont font;
         font.setPointSize(24);
         WeatherLabel->setFont(font);
@@ -73,7 +73,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "WeatherApp", nullptr));
         WeatherLabel->setText(QCoreApplication::translate("MainWindow", "?\302\260C", nullptr));
         CLabel_2->setText(QCoreApplication::translate("MainWindow", "Location:", nullptr));
         ConfirmButton->setText(QCoreApplication::translate("MainWindow", "Confirm", nullptr));

@@ -6,11 +6,13 @@
 #include <memory>
 #include <cstdio>
 #include <thread>
+#include <fstream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    void ReadLocation();
     ui->setupUi(this);
 }
 
@@ -26,6 +28,9 @@ public:
 };
 
 Info weather;
+
+std::ofstream FileWrite;
+std::ifstream ReadFile;
 
 void MainWindow::getWeatherSimple(const std::string& location) {
     std::string command;
@@ -51,8 +56,26 @@ void MainWindow::getWeatherSimple(const std::string& location) {
 
     weather.Weather = result;
     ui->WeatherLabel->setText(QString::fromStdString(weather.Weather));
+    void SaveLocation();
+}
+/*
+void MainWindow::SaveLocation() {
+    FileWrite.open("SaveLocation.txt");
+    if (FileWrite.is_open()) {
+        FileWrite << weather.Location << std::endl;
+    }
+    FileWrite.close();
 }
 
+void MainWindow::ReadLocation() {
+    std::ifstream ReadFile("SaveLocation.txt");
+    if (ReadFile.is_open()) {
+        std::getline(ReadFile, weather.Location);
+        ui->LineLocation->setText(QString::fromStdString(weather.Location));
+    }
+    ReadFile.close();
+}
+*/
 void MainWindow::on_ConfirmButton_clicked()
 {
     weather.Location = ui->LineLocation->text().toStdString();

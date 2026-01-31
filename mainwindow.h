@@ -21,6 +21,8 @@ private:
     Ui::MainWindow *ui;
 private slots:
     void getWeatherSimple(const std::string& location = "");
+    //void SaveLocation();
+    //void ReadLocation();
     void on_ConfirmButton_clicked();
 };
 #endif // MAINWINDOW_H
